@@ -181,6 +181,4 @@ def internal_server_error(e):
 def internal_server_error(e):
     return render_template('405.html'), 405
 
-if __name__ == '__main__':
-    # ajlScraper.newScrapeThread()
-    app.run(debug=True)
+ajlScraper.newScrapeThread()
