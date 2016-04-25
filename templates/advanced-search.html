@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}Advanced Search{% endblock %}
+{% block content %}
+<div class="container">
+<div class="row">
+<h1>Advanced Search</h1>
+	<form id="advancedSearchForm" action="/advanced-search" method="post" name="advancedSearch">
+	{{ form.hidden_tag() }}
+			<div class="col-md-3">
+				{{ form.fname.label }}</br>
+				{{ form.fname }}</br>
+				{{ form.lname.label }}</br>
+				{{ form.lname }}</br>
+				{{ form.bookingNumber.label }}</br>
+				{{ form.bookingNumber }}</br>
+			</div>
+			<div class="col-md-3">
+				{{ form.bookingDateMin.label }}</br>
+				{{ form.bookingDateMin(class_="dateInput") }} - {{ form.bookingDateMax(class_="dateInput") }}</br>
+				{{form.bondMin.label}}</br>
+				{{form.bondMin(class_="bondInput") }} - {{form.bondMax(class_="bondInput") }}</br>
+				{{ form.agency.label }}</br>
+				{{ form.agency }}</br>
+			</div>
+			<div class="col-md-3">
+				{{ form.status.label }}
+				{{ form.status }}
+				{{form.statute.label}}</br>
+				{{form.statute}}</br>
+				{{ form.description.label }}</br>
+				{{ form.description }}
+			</div>
+			<div class="col-md-3">
+				{{ form.level.label }}</br>
+				{{ form.level }}</br>
+				{{ form.degree.label }}</br>
+				{{ form.degree }}</br>
+				{{ form.removed }}
+				{{ form.removed.label }}</br>
+				{{ form.submit }}
+			</div>
+	</form>
+</div>
+
+	{% if searchSubmitted %}
+	<div id="results" class="row">
+		<div class="col-xs-12">
+		<table class='advancedTable cases table table-striped dt-responsive' id='results'>
+			<thead>
+			<tr>
+				<th>Name</th>
+				<th>Booked On</th>
+				<th class="hideOnMobile">Booking Number</th>
+				<th class="hideOnMobile">Agency</th>
+				<th>Total Bond</th>
+				<th class="hideOnMobile">Status</th>
+			</tr>
+			</thead>
+			<tbody>
+		{% for inmate in searchResults %}
+			<tr>
+				<td><a href="/inmates/{{ inmate['bookingNumber'] }}">{{ inmate['fname'] + ' ' + inmate['lname'] }}</a></td>
+				<td>{{ inmate['bookingDate'] }}</td>
+				<td class="hideOnMobile">{{ inmate['bookingNumber'] }}</td>
+				<td class="hideOnMobile">{{ inmate['agency'] }}</td>
+				<td>{{ inmate['totalBond'] }}</td>
+				<td class="hideOnMobile">{{ inmate['status'] }}</td>
+			</tr>
+		{% endfor %}
+			</tbody>
+		</table>
+		</div>
+	</div>
+	{% endif %}
+
+</div>
+
+</div> <!-- close container -->
+{% endblock %}

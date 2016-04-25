@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Changelog{% endblock %}
+{% block content %}
+<div class="container">
+
+<h1>Changelog</h1>
+
+<table class='cases table table-striped'>
+	<thead>
+	<tr>
+		<th>Change</th>
+		<th>Date</th>
+	</tr>
+	</thead>
+	<tbody>
+{% for change in changelog %}
+	<tr>
+		<td><a href="/inmates/{{ change['bookingNumber'] }}">{{ change['fname'] + ' ' + change['lname'] }}</a> {{ change['changeType'] }}.</td>
+		<td>{{ change['date'] }}</td>
+	</tr>
+{% endfor %}
+	</tbody>
+</table>
+
+</div> <!-- close container -->
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}{{ inmate['fname'] + ' ' + inmate['lname']}}{% endblock %}
+{% block content %}
+<div class="container">
+
+<div class = "row" id="inmateInfoContainer">
+	<div class="col-sm-9 col-md-6" id="inmateInfo">
+		<h1>{{ inmate['fname'] + ' ' + inmate['lname'] }}</h1>
+		<h4>Booked on {{ inmate['bookingDate'] }}</h4>
+		<h4>Total Bond: {{ inmate['totalBond'] }}</h4>
+		<h4>Status: {{ inmate['status'] }}</h4>
+	</div>
+	<div class="col-md-3 col-md-offset-3 col-sm-3 col-xs-12 col-xs-offset-0 pull-right">
+		<img id="mugshot" src="{{ inmate['mugshotURL'] }}">
+	</div>
+</div>
+<h2>Cases</h2>
+{% for case in inmate['cases'] %}
+	<table class='cases table table-striped'>
+		<tr>
+			<th>Case # {{ case['number'] }}</th>
+			<th>Agency: {{ case['agency'] }}</th>
+			<th colspan='2'>Bond: {{ case['bondAmount'] }}</th>
+		</tr>
+		<tr>
+			<th>Statute</th>
+			<th>Description</th>
+			<th>Level</th>
+			<th>Degree</th>
+		</tr>
+		{% for charge in case['charges'] %}
+		<tr>
+			<td class='col-sm-3'>{{ charge['statute'] }}</td>
+			<td class='col-sm-6'>{{ charge['description'] }}</td>
+			<td class='col-sm-1'>{{ charge['level'] }}</td>
+			<td class='col-sm-2'>{{ charge['degree'] }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+{% endfor %}
+
+
+</div> <!-- close container -->
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}All Inmates{% endblock %}
+{% block content %}
+<div class="container">
+
+<h1>All Inmates</h1>
+
+<table class='tablesorter table table-striped advancedTable'>
+	<thead>
+	<tr>
+		<th>Name</th>
+		<th>Booked On</th>
+		<th class="hideOnMobile">Booking Number</th>
+		<th>Total Bond</th>
+		<th>Status</th>
+	</tr>
+	</thead>
+	<tbody>
+{% for inmate in inmates %}
+	<tr>
+		<td><a href="/inmates/{{ inmate['bookingNumber'] }}">{{ inmate['fname'] + ' ' + inmate['lname'] }}</a></td>
+		<td>{{ inmate['bookingDate'] }}</td>
+		<td class="hideOnMobile">{{ inmate['bookingNumber'] }}</td>
+		<td>{{ inmate['totalBond'] }}</td>
+		<td>{{ inmate['status'] }}</td>
+	</tr>
+{% endfor %}
+	</tbody>
+</table>
+
+</div> <!-- close container -->
+{% endblock %}

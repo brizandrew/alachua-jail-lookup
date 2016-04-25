@@ -1,0 +1,67 @@
+.cases, #allInmatesTable{
+	margin-bottom: 70px;
+}
+.navbar{
+	border-radius: 0px;
+}
+#results{
+	list-style: none;
+	padding: 0px;
+	margin-top: 43px;
+}
+#mugshot{
+	width: 100%;
+}
+#inmateInfo h1{
+	margin: 0px 0px 30px 0px;
+}
+#inmateInfo h4{
+	margin-bottom: 20px;
+}
+.formContainer{
+	background-color: green;
+}
+#advancedSearchForm label, #advancedSearchForm #submit{
+	margin-top: 20px;
+}
+.bondInput{
+	width: 52px;
+}
+.dateInput{
+	width: 140px;
+}
+#status, #level{
+	padding: 0px;
+	margin: 0px;
+}
+#status label, #level label{
+	margin-top: 0px !important;
+}
+#status li, #level li{
+	list-style: none;
+}
+.errorMsg{
+	color: red;
+	margin-top: 10px;
+	text-align: center;
+}
+#userPreferences h4{
+	margin-top: 20px;
+}
+#newAlertModalButton a, .edit{
+	cursor: pointer;
+	text-decoration: underline;
+}
+#newAlertModalButton{
+	text-align: center;
+}
+.deleteAlert{
+	float: none;
+	margin-right: 5px;
+}
+
+@media (max-width: 720px) {
+  .hideOnMobile {
+    display: none;
+  }
+}
