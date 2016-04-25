@@ -4,5 +4,6 @@ unix_socket=''
 user=''
 passwd=None
 db=''
+unix_socket = ''
 
 charset='utf8'
