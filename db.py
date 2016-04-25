@@ -230,7 +230,7 @@ def commitInsert():
             addChange(bookingNumber, 'added')
             newAdditions.append(bookingNumber)
 
-    # checkAlerts(newAdditions)
+    checkAlerts(newAdditions)
 
 
 def updateInmate(bookingNumber, column, value):
