@@ -1,0 +1,17 @@
+beautifulsoup4==4.4.1
+dominate==2.2.0
+Flask==0.10.1
+Flask-Bootstrap==3.3.5.7
+Flask-WTF==0.12
+itsdangerous==0.24
+Jinja2==2.8
+keyring==9.0
+lxml==3.6.0
+MarkupSafe==0.23
+PyMySQL==0.7.2
+schedule==0.3.2
+titlecase==0.8.1
+visitor==0.1.2
+Werkzeug==0.11.5
+WTForms==2.1
+yagmail==0.4.132
