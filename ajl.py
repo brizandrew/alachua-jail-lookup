@@ -6,6 +6,7 @@ from wtforms.fields import StringField, SubmitField, IntegerField, RadioField, B
 from wtforms.fields.html5 import DateField, IntegerField
 from wtforms.validators import Required, Optional, Email
 from threading import Thread
+import pymysql
 import db
 import ajlScraper
 
@@ -173,11 +174,11 @@ def page_not_found(e):
     return render_template('404.html'), 404
 
 @app.errorhandler(500)
-def internal_server_error_500(e):
+def internal_server_error(e):
     return render_template('500.html'), 500
 
 @app.errorhandler(405)
-def internal_server_error_405(e):
+def internal_server_error(e):
     return render_template('405.html'), 405
 
 ajlScraper.newScrapeThread()
