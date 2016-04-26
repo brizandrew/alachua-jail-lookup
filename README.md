@@ -9,9 +9,9 @@ The Alachua County Jail Lookup is a hybrid flask app and scraper to help keep WU
 #### Setup
 1. Create virtual environment (optional, but highly recommended)
 2. Install all dependencies by using ' $ pip install -r requirements.txt '
-3. Set up baseDB on your database
-4. Upload the repo files on to a Python host (such as [Python Anywhere](https://www.pythonanywhere.com/)). Alternatively you can host a local server. In that case, add the following lines of code to the end of ajl.py: `if __name__ == '__main__':` and `app.run()`
-5. Update the data in dbInfo.py to match the information of your database. If no unix_socket is needed, leave that line as is.
+3. Set up [baseDB.sql](baseDB.sql) on your database
+4. Upload the repo files on to a Python host (such as [Python Anywhere](https://www.pythonanywhere.com/)). Alternatively you can host a local server. In that case, add the following lines of code to the end of [ajl.py](ajl.py): `if __name__ == '__main__':` and `app.run()`
+5. Update the data in [dbInfo.py](dbInfo.py) to match the information of your database. If no unix_socket is needed, leave that line as is.
 6. Start your server
 
 #### Usage Disclaimer
