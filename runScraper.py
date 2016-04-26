@@ -1,2 +1,2 @@
-import ajlScraper.py
+import ajlScraper
 ajlScraper.scrapeJailSite()
