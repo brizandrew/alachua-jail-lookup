@@ -35,6 +35,8 @@ The main app file takes care of routing users to the correct pages. It also incl
 This module is a collection of custom functions that use PyMySQL to interact with the SQL database in a number of ways. Some functions read certain data including searchDB (the main searching function) and others write to different tables. It also manages alerts, checking them when new additions are made, and sending emails accordingly.
 ###### [dbInfo.py](dbInfo.py)
 This file holds the data specific to your host database. `charset` should not be changed. Adding a `unix_socket` is optional, but the variable should be left as is if it's not needed.
+###### [runScraper.py](runScraper.py)
+This script runs the scraper once. It's useful for setting up automation in envioronments where threaded automation isn't allowed like in Python Everywhere.
 ###### [templates](templates)
 This folder holds all the html views that are rendered by [ajl.py](ajl.py).
 ###### [static/js/main](static/js/main)
