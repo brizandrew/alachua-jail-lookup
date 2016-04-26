@@ -20,20 +20,20 @@
 		<tr>
 			<th>Case # {{ case['number'] }}</th>
 			<th>Agency: {{ case['agency'] }}</th>
-			<th colspan='2'>Bond: {{ case['bondAmount'] }}</th>
+			<th class="hideOnMobile" colspan='2'>Bond: {{ case['bondAmount'] }}</th>
 		</tr>
 		<tr>
 			<th>Statute</th>
 			<th>Description</th>
-			<th>Level</th>
-			<th>Degree</th>
+			<th class="hideOnMobile">Level</th>
+			<th class="hideOnMobile">Degree</th>
 		</tr>
 		{% for charge in case['charges'] %}
 		<tr>
 			<td class='col-sm-3'>{{ charge['statute'] }}</td>
 			<td class='col-sm-6'>{{ charge['description'] }}</td>
-			<td class='col-sm-1'>{{ charge['level'] }}</td>
-			<td class='col-sm-2'>{{ charge['degree'] }}</td>
+			<td class="hideOnMobile" class='col-sm-1'>{{ charge['level'] }}</td>
+			<td class="hideOnMobile" class='col-sm-2'>{{ charge['degree'] }}</td>
 		</tr>
 		{% endfor %}
 	</table>

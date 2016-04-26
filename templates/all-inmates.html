@@ -11,8 +11,8 @@
 		<th>Name</th>
 		<th>Booked On</th>
 		<th class="hideOnMobile">Booking Number</th>
-		<th>Total Bond</th>
-		<th>Status</th>
+		<th class="hideOnMobile">Total Bond</th>
+		<th class="hideOnMobile">Status</th>
 	</tr>
 	</thead>
 	<tbody>
@@ -21,8 +21,8 @@
 		<td><a href="/inmates/{{ inmate['bookingNumber'] }}">{{ inmate['fname'] + ' ' + inmate['lname'] }}</a></td>
 		<td>{{ inmate['bookingDate'] }}</td>
 		<td class="hideOnMobile">{{ inmate['bookingNumber'] }}</td>
-		<td>{{ inmate['totalBond'] }}</td>
-		<td>{{ inmate['status'] }}</td>
+		<td class="hideOnMobile">{{ inmate['totalBond'] }}</td>
+		<td class="hideOnMobile">{{ inmate['status'] }}</td>
 	</tr>
 {% endfor %}
 	</tbody>
