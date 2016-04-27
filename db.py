@@ -815,7 +815,7 @@ def sendEmails(triggeredAlerts):
         html = 'The following alerts were triggered in the latest Alachua County Jail Inmate update. Click <a href="http://oldweb.circuit8.org/inmatelist.php">here</a> for the official source.'
         html += '<ul>'
         for alert in email:
-            html += '<li><a href="http://localhost:5000/inmates/%s">%s</a> was added and meets the requirement "%s %s %s"</li>' % (alert['bookingNumber'],alert['name'],alert['alert']['attribute'],alert['alert']['comparison'],alert['alert']['value'])
+            html += '<li><a href="%s/inmates/%s">%s</a> was added and meets the requirement "%s %s %s"</li>' % (dbInfo.hostURL, alert['bookingNumber'],alert['name'],alert['alert']['attribute'],alert['alert']['comparison'],alert['alert']['value'])
         html += '</ul><p><em>You are recieving this email because you have elected to recieve email alerts based on Alachua County Inmate updates. If this is a mistake please contact alachuajailalert@gmail.com.</em></p>'
         
         yag = yagmail.SMTP(dbInfo.alertEmail)
