@@ -65,6 +65,14 @@ def getInnerInmateData(url):
         federal = inmateInfo[5].getText()
         otherCounty = inmateInfo[6].getText()
         hold = inmateInfo[7].getText()
+
+        return {
+            'totalBond':totalBond,
+            'status':status,
+            'federal':federal,
+            'otherCounty':otherCounty,
+            'hold':hold
+        }
     except IndexError:
         return {
             'totalBond':'',
