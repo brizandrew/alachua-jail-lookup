@@ -57,21 +57,22 @@ def getInnerInmateData(url):
 
     tables = bsObj.findAll('table')
 
-    inmateInfo = tables[0].findAll('tr')[1].findAll('td')
+    try:
+        inmateInfo = tables[0].findAll('tr')[1].findAll('td')
 
-    totalBond = float(inmateInfo[3].getText().replace(' ', '').replace('$','').replace(',',''))
-    status = inmateInfo[4].getText()
-    federal = inmateInfo[5].getText()
-    otherCounty = inmateInfo[6].getText()
-    hold = inmateInfo[7].getText()
-
-    return {
-        'totalBond':totalBond,
-        'status':status,
-        'federal':federal,
-        'otherCounty':otherCounty,
-        'hold':hold
-    }
+        totalBond = float(inmateInfo[3].getText().replace(' ', '').replace('$','').replace(',',''))
+        status = inmateInfo[4].getText()
+        federal = inmateInfo[5].getText()
+        otherCounty = inmateInfo[6].getText()
+        hold = inmateInfo[7].getText()
+    except IndexError:
+        return {
+            'totalBond':'',
+            'status':'',
+            'federal':'',
+            'otherCounty':'',
+            'hold':''
+        }
 
 
 
